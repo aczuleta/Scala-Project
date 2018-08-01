@@ -27,7 +27,7 @@ After that run ng serve --open
 the frontend is going to run at port 4200 on the localhost
 
 
-##Testing
+## Testing
 For testing purposes you can run the following paths in the api:
 GET - http:localhost:5100/teams
 returns all the teams with their average score
@@ -46,6 +46,6 @@ Given the name of a team it returns all its players
 A postman's file containing all the url's for testing can be found here:
 Postman's File: https://www.getpostman.com/collections/d6713e559eda0e85d850
 
-##Deployment
+## Deployment
 An we deployment of this project can be found at the following url:
 Web Deployment: http://scala-project-bucket.s3-website-us-west-2.amazonaws.com/
