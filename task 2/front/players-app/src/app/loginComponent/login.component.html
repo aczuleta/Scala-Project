@@ -1,0 +1,51 @@
+<div class="col s12 imagenFondo fullScreen valign-wrapper">
+    <div class="row fullWidth">
+        <div class="col s4 offset-s4" (keyup.enter)="login()">
+            <!--
+                <div class="input-field col s12 ">
+                    <input id="user"  [(ngModel)]="username" type="text" class="validate white-text">
+                    <label for="user">Username</label>
+                </div>
+                <div  [hidden]="!login1" class="input-field col s12 ">
+                    <input id="pass"  [(ngModel)]="password" type="password" class="validate white-text">
+                    <label for="pass">Password</label>
+                </div> -->
+                <div  [hidden]="!login1" class="col s12 center" style="margin-bottom: 20px;">
+                        <a class="btn" routerLink="/predictor" >Login Predictor</a>
+                </div>
+                <div  [hidden]="!login1" class="col s12 center">
+                        <a class="btn" routerLink="/editor" >Login Editor</a>
+                </div>
+
+                <!--
+                <div  [hidden]="login1" class="input-field col s12 center white-text">
+                        <select [(ngModel)]="role">
+                          <option value="" disabled selected>¿What isyour role?</option>
+                          <option value="p">Predictor</option>
+                          <option value="e">Editor</option>
+                        </select>
+                        <label>User Role</label>
+                </div>
+
+                <div [hidden]="!registrado" class="col s12 center-align">
+                    <p class="white-text">This is your password: <b>{{visible}}</b></p>
+                </div>
+
+                <div [hidden]="!registrado" class="col s12 center-align">
+                        <a class="btn" (click)="aceptar()">Accept</a>
+                </div>
+                
+                <div [hidden]="login1 || registrado" (click)="signUser()" class="col s12 center">
+                        <a class="btn" routerLink="/editor">Sign Up</a>
+                </div> 
+                <br>
+                <div [hidden]="!login1" class="col s12 center-align">
+                    <br>
+                    <a  (click)="signUp()" class="yellow-text" style="cursor: pointer" > Sign Up</a>
+                </div>
+                <div [hidden]="error1" class="col s12 center-align">
+                    <p  class="red-text">Correo y/o contraseña inválida</p>
+                </div> -->
+        </div>
+    </div>
+</div>

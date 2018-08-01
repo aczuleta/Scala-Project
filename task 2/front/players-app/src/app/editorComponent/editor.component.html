@@ -1,0 +1,40 @@
+<div class="col s12">
+        <div class="row">
+            <br>
+            <div class="col s4 offset-s4 center-align">
+                    <h4>Choose a Team</h4>
+                    <br>
+                    <div class="col s12">
+                        <select  (change)="getPlayers()" [(ngModel)]="team" class="browser-default">
+                            <option value="" selected>Choose a Team</option>
+                            <option *ngFor="let t of teams ; let i = index" value={{t.team}}>{{t.team}}</option>
+                        </select>
+                    </div>
+                    <div class="col s12 center-align">
+                        <h5>Choose a player</h5>
+                    </div>
+                    <div class="col s12">
+                        <select (change)="getScore()"  [disabled]="team==''"  [(ngModel)]="player" class="browser-default">
+                            <option value="" selected>Choose a Team</option>
+                            <option *ngFor="let t of players ; let i = index" value={{i}}>{{t.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col s12">
+                        <p>Current Player's Score:</p>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="pass" placeholder=" " [disabled]="player==''" [(ngModel)]="score" type="number" min=0 
+                        class="validate black-text">
+                        <label for="pass">Score</label>
+                    </div>
+                    <div class="col s12">
+                        <a class="btn" (click)="edit()">Edit</a>
+                    </div>
+            </div>
+            <div class="col s2 offset-s2">
+                <a class="btn-flat" (click)="logout()">
+                    Log Out
+                </a>
+            </div>
+        </div>
+    </div>

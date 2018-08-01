@@ -1,0 +1,35 @@
+<div class="col s12">
+    <div class="row">
+        <br>
+        <div class="col s4 offset-s4 center-align">
+                <h4>Choose a Match</h4>
+                <br>
+                <div class="col s12">
+                    <select [(ngModel)]="team1" class="browser-default">
+                        <option value="" selected>Choose a Team</option>
+                        <option *ngFor="let t of teams ; let i = index" value={{i}}>{{t.team}}</option>
+                    </select>
+                </div>
+                <div class="col s12 center-align">
+                    <h5>VS</h5>
+                </div>
+                <div class="col s12" style="margin-bottom: 20px;">
+                    <select [(ngModel)]="team2" class="browser-default">
+                        <option value="" selected>Choose a Team</option>
+                        <option *ngFor="let t of teams ; let i = index" value={{i}}>{{t.team}}</option>
+                    </select>
+                </div>
+                <div class="col s12">
+                    <a class="btn" (click)="predict()">Predict</a>
+                </div>
+                <div class="col s12">
+                    <p>Winner: {{winner}}</p>
+                </div>
+        </div>
+        <div class="col s2 offset-s2">
+            <a class="btn-flat" (click)="logout()">
+                Log Out
+            </a>
+        </div>
+    </div>
+</div>
