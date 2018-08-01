@@ -1,32 +1,63 @@
-abstract class any2(x: Any) {
-  def assign(y: Any)
-  def show()
+//NEW SYSTEM
+
+abstract class Any2(init: Any) {
+  def assign(param: Any)
+  def value()
 }
 
-class anyVar(var x: Any) extends any2(x){
-  override def assign(y: Any) = x = y
-  def show() = {
-    println(x)
-    println(" <- is the current value\n ")
+class AnyVal(init: Any) extends Any2(init){
+  override def assign(param: Any) = {
+    throw new Exception("Object inmutable. You cannot change it's value.")
+  }
+   def value() = {
+    println(" value: " + init)
   }
 }
 
-class anyVal(x: Any) extends any2(x){
-  override def assign(y: Any) = println("ERROR - Cannot assign: " + y
-    + " to a val ")
-  def show() = {
-    println(x)
-    println(" <- is the current value\n ")
+class AnyVar(var init: Any) extends Any2(init){
+  override def assign(param: Any) = {
+    init = param
+  }
+   def value() = {
+    println(" value: " + init)
   }
 }
 
-var x = new anyVar(12)
-x.show()
-x assign 6
-x.show()
+//TEST WITH INT
+var x = new AnyVar(0)
+x.value()
+x.assign(20)
+x.value()
+//TEST WITH STRING
+x.assign("Hellow World")
+x.value()
+//TEST WITH BOOLEAN
+x.assign(true)
+x.value()
+
+//TEXT WITH INT
+var y = new AnyVal(96)
+y.value()
+
+//TEXT WITH STRING
+var w = new AnyVal("Hellow World 2")
+w.value()
+
+//TEST WITH BOOLEAN
+var z = new AnyVal(true)
+z.value()
+
+//Trying to reassign
+y.assign(10)
+y.value()
+
+w.assign("Lorem Ipsum")
+w.value()
+
+z.assign(false)
+z.value()
 
 
-var y = new anyVal(23)
-y.show()
-y assign 999
+
+
 
